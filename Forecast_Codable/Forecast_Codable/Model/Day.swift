@@ -28,7 +28,7 @@ struct Day: Decodable {
     let highTemp: Double
     let lowTemp: Double
     let validDate: String
-    let weather: [Weather]
+    let weather: Weather
 }
 
 struct Weather: Decodable {

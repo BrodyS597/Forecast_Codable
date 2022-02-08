@@ -185,11 +185,12 @@
                         <outlet property="currentHighLabel" destination="Esr-ij-ShE" id="o4l-UF-l7p"/>
                         <outlet property="currentLowLabel" destination="TAA-be-agO" id="D2l-rz-MDl"/>
                         <outlet property="currentTempLabel" destination="A8A-Jh-aob" id="x9k-yf-EKi"/>
+                        <outlet property="dayForcastTableView" destination="JDc-2Y-LkP" id="Dyv-YU-4S1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="84"/>
+            <point key="canvasLocation" x="-445" y="66"/>
         </scene>
     </scenes>
     <resources>

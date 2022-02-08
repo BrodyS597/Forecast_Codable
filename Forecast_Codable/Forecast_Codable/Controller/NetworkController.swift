@@ -14,7 +14,6 @@ class NetworkController {
     // MARK: - URL
     private static let baseURLString = "https://api.weatherbit.io/"
     
-    
     static func fetchDays(completion: @escaping (TopLevelDictionary?) -> Void ) {
         guard let baseURL = URL(string: baseURLString) else { return completion(nil)}
         
@@ -32,21 +31,19 @@ class NetworkController {
             if let error = error {
                 print("There was an error fetching the data, the url is \(finalUrl) the error is \(error.localizedDescription)")
                 completion(nil)
-                guard let dayData = dayData else {
-                    print("There was an error receiving the data")
-                    completion(nil)
-                    return
-                }
-                do {
-                    let TopLevelDictionary = try JSONDecoder().decode(TopLevelDictionary.self, from: dayData)
-                    completion(TopLevelDictionary)
-                } catch {
-                    print("Error in Do/Try/Catch: \(error.localizedDescription)")
-                          completion(nil)
-                }
             }
-            
+            guard let dayData = dayData else {
+                print("There was an error receiving the data")
+                completion(nil)
+                return
+            }
+            do {
+                let topLevelDictionary = try JSONDecoder().decode(TopLevelDictionary.self, from: dayData)
+                completion(topLevelDictionary)
+            } catch {
+                print("Error in Do/Try/Catch:", error.localizedDescription)
+                completion(nil)
+            }
         }.resume()
     }
-    
 }// end of class
